@@ -1,0 +1,32 @@
+.contenedor {
+  // width: 800px;
+  // margin: auto;
+  // margin-top: 50px;
+  padding-top: 50px;
+  height: 100%;
+  display: flex;
+  gap: 30px;
+
+  // background-color: #49709c;
+  background-image: linear-gradient(to bottom, rgba(255,0,0,0), #49709c 70%);
+
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+
+}
+.example-container{
+  height: 100%;
+}
+.lateral{
+  display: flex;
+  align-items: center;
+  width: 200px;
+  background-color: #858788;
+}
+
+.superior{
+  background-color: rgb(38, 66, 230);
+  display: flex;
+  align-items: center;
+}

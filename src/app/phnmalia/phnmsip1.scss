@@ -1,0 +1,11 @@
+.fila {
+  display: flex;
+  align-items: center;
+  gap: 10px 20px; /* row-gap column gap */
+  flex-wrap: nowrap;
+  // justify-content: space-evenly;
+}
+
+.fila p {
+text-transform: capitalize;
+}
