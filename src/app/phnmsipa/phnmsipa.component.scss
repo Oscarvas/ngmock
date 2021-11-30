@@ -1,0 +1,22 @@
+.hey{
+  width: 800px;
+}
+.fila {
+  display: flex;
+  align-items: center;
+  gap: 10px 20px; /* row-gap column gap */
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}

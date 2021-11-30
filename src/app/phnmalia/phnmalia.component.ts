@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog} from '@angular/material/dialog';
 import { MAPA_PHNMAILA,PBPACAB1 } from './mapa-phnmalia';
+import { Phnmsip1Component } from '../phnmsip1/phnmsip1.component';
 
 @Component({
   selector: 'app-phnmalia',
@@ -31,17 +32,9 @@ export class PhnmaliaComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   openDialog() {
-    this.dialog.open(Phnmsip1);
+    this.dialog.open(Phnmsip1Component);
   }
   ngOnInit(): void {
   }
 
-}
-
-@Component({
-  selector: 'app-phnmsip1',
-  templateUrl: './phnmsip1.html',
-  styleUrls: ['./phnmsip1.scss']
-})
-export class Phnmsip1 {
 }

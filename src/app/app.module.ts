@@ -5,11 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Phnmali1Component } from './phnmali1/phnmali1.component';
 import { PhnmsipaComponent } from './phnmsipa/phnmsipa.component';
-import { PhnmaliaComponent,Phnmsip1 } from './phnmalia/phnmalia.component';
+import { PhnmaliaComponent } from './phnmalia/phnmalia.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { PfpaginaComponent } from './pfpagina/pfpagina.component';
+import { Phnmsip1Component } from './phnmsip1/phnmsip1.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { PfpaginaComponent } from './pfpagina/pfpagina.component';
     PhnmaliaComponent,
     CabeceraComponent,
     PfpaginaComponent,
-    Phnmsip1
+    Phnmsip1Component
   ],
   imports: [
     BrowserModule,
