@@ -11,6 +11,7 @@ import { MaterialModule } from './material/material.module';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { PfpaginaComponent } from './pfpagina/pfpagina.component';
 import { Phnmsip1Component } from './phnmsip1/phnmsip1.component';
+import { MySideComponent } from './my-side/my-side.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { Phnmsip1Component } from './phnmsip1/phnmsip1.component';
     PhnmaliaComponent,
     CabeceraComponent,
     PfpaginaComponent,
-    Phnmsip1Component
+    Phnmsip1Component,
+    MySideComponent
   ],
   imports: [
     BrowserModule,
