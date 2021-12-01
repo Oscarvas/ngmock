@@ -1,15 +1,17 @@
 <mat-toolbar class="superior">
-<span>Cabecera</span>
+  <span>Cabecera</span>
 </mat-toolbar>
-<mat-sidenav-container class="example-container">
-  <mat-sidenav opened mode="side" class="lateral">
-    <app-my-side></app-my-side>
-   </mat-sidenav>
-   <div class="contenedor">
-     <router-outlet></router-outlet>
-    <!-- <app-phnmali1></app-phnmali1> -->
-    <!-- <app-phnmalia></app-phnmalia> -->
-    <app-pfpagina></app-pfpagina>
-  </div>
 
+<!-- Creates a layout with a left and right sidenav and implicit content. -->
+<mat-sidenav-container>
+  <mat-sidenav opened mode="side">
+    <app-my-side></app-my-side>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-pfpagina></app-pfpagina>
+    <router-outlet></router-outlet>
+
+    <!-- <app-phnmsipa></app-phnmsipa> -->
+  </mat-sidenav-content>
 </mat-sidenav-container>
+

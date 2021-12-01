@@ -18,7 +18,7 @@ export class PhnmaliaComponent implements OnInit {
   cuerpo: MAPA_PHNMAILA = {
     DESIPF: 'string',
     DUPIF: 'string',
-    NUMIPF: 'string',
+    NUMIPF: '00019174S',
     TIPOIPF: 'string',
     AEXP: 'string',
     CEXP: 'string',

@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MAPA_PHNMAILA, PBPACAB1 } from '../phnmalia/mapa-phnmalia';
 import { PhnmsipaComponent } from '../phnmsipa/phnmsipa.component';
 import { PfpaginaComponent } from '../pfpagina/pfpagina.component';
+import { CabeceraComponent } from '../cabecera/cabecera.component';
 
 @Component({
   selector: 'app-phnmali1',
@@ -34,7 +35,7 @@ export class Phnmali1Component implements OnInit {
   ngOnInit(): void {
   }
   openDialog() {
-    this.dialog.open(PhnmsipaComponent);
+    this.dialog.open(CabeceraComponent);
   }
   abreAyuda() {
     console.log(KeyboardEvent)
