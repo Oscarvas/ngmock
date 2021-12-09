@@ -1,18 +1,6 @@
 import {Component, OnInit } from '@angular/core';
-import { MAPA_PHNMSIPA } from '../material/pdas';
+import { SimulaBackendService } from '../servicios/simula-backend.service';
 
-const datos: MAPA_PHNMSIPA[] = [
-  {'SEL':'','ANO':'2021','ENTIDAD':'101','RECIBO':'2023025525','SIT':'I','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'},
-  {'SEL':'','ANO':'2021','ENTIDAD':'101','RECIBO':'1022025499','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'},
-  {'SEL':'','ANO':'2021','ENTIDAD':'101','RECIBO':'6021025527','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'},
-  {'SEL':'','ANO':'2020','ENTIDAD':'101','RECIBO':'6032025562','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'},
-  {'SEL':'','ANO':'2020','ENTIDAD':'101','RECIBO':'8231025504','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'PAGA EXTRA'},
-  {'SEL':'','ANO':'2020','ENTIDAD':'101','RECIBO':'2031025507','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'},
-  {'SEL':'','ANO':'2020','ENTIDAD':'101','RECIBO':'9030025455','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'},
-  {'SEL':'','ANO':'2020','ENTIDAD':'101','RECIBO':'5029025489','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'},
-  {'SEL':'','ANO':'2020','ENTIDAD':'101','RECIBO':'9028025508','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'},
-  {'SEL':'','ANO':'2020','ENTIDAD':'101','RECIBO':'7027025464','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'}
-];
 
 @Component({
   selector: 'app-phnmsipa',
@@ -20,12 +8,6 @@ const datos: MAPA_PHNMSIPA[] = [
   styleUrls: ['./phnmsipa.component.scss']
 })
 export class PhnmsipaComponent implements OnInit {
-
-  // constructor() { }
-
-  ngOnInit(): void {
-  }
-   // string[] = ['id', 'name', 'progress', 'fruit'];
   displayedColumns: string[] = [
     'SEL',
     'ANO',
@@ -38,10 +20,14 @@ export class PhnmsipaComponent implements OnInit {
     'FECHA_DESDE',
     'FECHA_HASTA',
     'TIP_PAGO'];
-    misDatos = datos;
 
-  constructor() {
+    misDatos = this.simula.getListadoSIPA();
+
+  constructor(private simula: SimulaBackendService) { }
+
+  ngOnInit(): void {
   }
+   // string[] = ['id', 'name', 'progress', 'fruit'];
 
 
 }
