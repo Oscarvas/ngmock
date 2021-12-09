@@ -1,102 +1,47 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+import {Component, OnInit } from '@angular/core';
+import { MAPA_PHNMSIPA } from '../material/pdas';
 
-export interface UserData {
-  id: string;
-  name: string;
-  progress: string;
-  fruit: string;
-}
+const datos: MAPA_PHNMSIPA[] = [
+  {'SEL':'','ANO':'2021','ENTIDAD':'101','RECIBO':'2023025525','SIT':'I','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'},
+  {'SEL':'','ANO':'2021','ENTIDAD':'101','RECIBO':'1022025499','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'},
+  {'SEL':'','ANO':'2021','ENTIDAD':'101','RECIBO':'6021025527','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'},
+  {'SEL':'','ANO':'2020','ENTIDAD':'101','RECIBO':'6032025562','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'},
+  {'SEL':'','ANO':'2020','ENTIDAD':'101','RECIBO':'8231025504','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'PAGA EXTRA'},
+  {'SEL':'','ANO':'2020','ENTIDAD':'101','RECIBO':'2031025507','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'},
+  {'SEL':'','ANO':'2020','ENTIDAD':'101','RECIBO':'9030025455','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'},
+  {'SEL':'','ANO':'2020','ENTIDAD':'101','RECIBO':'5029025489','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'},
+  {'SEL':'','ANO':'2020','ENTIDAD':'101','RECIBO':'9028025508','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'},
+  {'SEL':'','ANO':'2020','ENTIDAD':'101','RECIBO':'7027025464','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'}
+];
 
-/** Constants used to fill up our data base. */
-const FRUITS: string[] = [
-  'blueberry',
-  'lychee',
-  'kiwi',
-  'mango',
-  'peach',
-  'lime',
-  'pomegranate',
-  'pineapple',
-];
-const NAMES: string[] = [
-  'Maia',
-  'Asher',
-  'Olivia',
-  'Atticus',
-  'Amelia',
-  'Jack',
-  'Charlotte',
-  'Theodore',
-  'Isla',
-  'Oliver',
-  'Isabella',
-  'Jasper',
-  'Cora',
-  'Levi',
-  'Violet',
-  'Arthur',
-  'Mia',
-  'Thomas',
-  'Elizabeth',
-];
 @Component({
   selector: 'app-phnmsipa',
   templateUrl: './phnmsipa.component.html',
   styleUrls: ['./phnmsipa.component.scss']
 })
-export class PhnmsipaComponent implements OnInit,AfterViewInit {
+export class PhnmsipaComponent implements OnInit {
 
   // constructor() { }
 
   ngOnInit(): void {
   }
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
-  dataSource: MatTableDataSource<UserData>;
-
-  @ViewChild(MatPaginator)
-  paginator!: MatPaginator;
-  @ViewChild(MatSort)
-  sort!: MatSort;
+   // string[] = ['id', 'name', 'progress', 'fruit'];
+  displayedColumns: string[] = [
+    'SEL',
+    'ANO',
+    'ENTIDAD',
+    'RECIBO',
+    'SIT',
+    'MOD_PAGO',
+    'ENT_PAGO',
+    'SUC_PAGO',
+    'FECHA_DESDE',
+    'FECHA_HASTA',
+    'TIP_PAGO'];
+    misDatos = datos;
 
   constructor() {
-    // Create 100 users
-    const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
-
-    // Assign the data to the data source for the table to render
-    this.dataSource = new MatTableDataSource(users);
-    console.log(users);
   }
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
-
-}
-/** Builds and returns a new User. */
-function createNewUser(id: number): UserData {
-  const name =
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
-    ' ' +
-    NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
-    '.';
-
-  return {
-    id: id.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))],
-  };
 }

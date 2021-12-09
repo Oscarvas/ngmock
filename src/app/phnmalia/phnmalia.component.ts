@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog} from '@angular/material/dialog';
-import { MAPA_PHNMAILA,PBPACAB1 } from './mapa-phnmalia';
+import { MAPA_PHNMAILA,PBPACAB1 } from '../material/pdas';
 import { Phnmsip1Component } from '../phnmsip1/phnmsip1.component';
 
 @Component({
