@@ -21,7 +21,7 @@
 </form>
 <p>--- Periodo de Pago --</p>
 <div>
-  <table mat-table [dataSource]="misDatos" class="mat-elevation-z8">
+  <table mat-table [dataSource]="listado" class="mat-elevation-z8">
 
     <ng-container *ngFor="let columna of displayedColumns" matColumnDef={{columna}}>
       <th mat-header-cell *matHeaderCellDef> {{columna}} </th>

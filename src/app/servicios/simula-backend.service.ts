@@ -1,5 +1,8 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MAPA_PHNMSIPA } from '../material/pdas';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry, tap } from 'rxjs/operators';
 
 const datos: MAPA_PHNMSIPA[] = [
   {'SEL':'','ANO':'2021','ENTIDAD':'101','RECIBO':'2023025525','SIT':'I','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'},
@@ -14,14 +17,23 @@ const datos: MAPA_PHNMSIPA[] = [
   {'SEL':'','ANO':'2020','ENTIDAD':'101','RECIBO':'7027025464','SIT':'P','MOD_PAGO':'2','ENT_PAGO':2095,'SUC_PAGO':3132,'FECHA_DESDE':20210301,'FECHA_HASTA':20210331,'TIP_PAGO':'NOMINA NORMAL'}
 ];
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class SimulaBackendService {
-
-  constructor() { }
+  private apiUrl = `http://localhost:5000/listado`;
+  constructor(private http: HttpClient) { }
 
   getListadoSIPA (): MAPA_PHNMSIPA[]{
     return datos;
+  }
+  // list(): Observable<any>{
+  //   return this.http.get(this.apiUrl);
+  // }
+  list(): Observable<MAPA_PHNMSIPA[]>{
+    return this.http.get<MAPA_PHNMSIPA[]>(this.apiUrl).pipe(
+      tap(() => console.log('conectado a python'))
+    );
   }
 }

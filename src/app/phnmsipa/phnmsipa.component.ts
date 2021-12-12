@@ -1,4 +1,6 @@
 import {Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { MAPA_PHNMSIPA } from '../material/pdas';
 import { SimulaBackendService } from '../servicios/simula-backend.service';
 
 
@@ -21,11 +23,20 @@ export class PhnmsipaComponent implements OnInit {
     'FECHA_HASTA',
     'TIP_PAGO'];
 
-    misDatos = this.simula.getListadoSIPA();
+  // misDatos: Observable<MAPA_PHNMSIPA[]> = of([]);
+  listado: MAPA_PHNMSIPA[]=[];
 
-  constructor(private simula: SimulaBackendService) { }
+  constructor(private listaService: SimulaBackendService) {
+    // this.misDatos = listaService.list();
+  }
 
   ngOnInit(): void {
+    this.listaService.list().subscribe(datos=>{
+      // console.log(datos);
+      this.listado = datos;
+    },
+    error => console.log(error)
+    );
   }
    // string[] = ['id', 'name', 'progress', 'fruit'];
 

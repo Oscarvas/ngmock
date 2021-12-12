@@ -12,6 +12,7 @@ import { CabeceraComponent } from './cabecera/cabecera.component';
 import { PfpaginaComponent } from './pfpagina/pfpagina.component';
 import { Phnmsip1Component } from './phnmsip1/phnmsip1.component';
 import { MySideComponent } from './my-side/my-side.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MySideComponent } from './my-side/my-side.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
