@@ -3,14 +3,10 @@
   <p>{{cabecera.LINEA_2}}</p>
   <p>{{cabecera.LINEA_3}}</p>
   <mat-divider></mat-divider>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p>Claves principales</p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
+
+  <fieldset>
+    <legend>Claves principales</legend>
+
   <div class="fila">
     <p>Expediente......:</p>
     <mat-form-field matTooltip="Este campo dispone de ayuda. Introduzca '?' en este campo para abrirla..." style="width: 1ch;" >
@@ -43,7 +39,7 @@
     </mat-form-field>
 
   </div>
-  <p></p>
+
   <div >
     <form class="fila">
       <p>Identificador de pago (recibo)......: Año</p>
@@ -65,13 +61,10 @@
       </mat-form-field>
     </form>
   </div>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p>-------- Clave para pensionistas ---</p>
-  <p></p>
-  <p></p>
-  <p></p>
+  </fieldset>
+  <fieldset>
+    <legend>Clave para pensionistas</legend>
+
   <div class="fila">
     <p>Identificador Persona Fisica (IPF)</p>
     <mat-form-field matTooltip="TIPOIPF" style="width: 1ch;">
@@ -91,12 +84,7 @@
       <input matInput maxlength="2">
     </mat-form-field>
   </div>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
-  <p></p>
+  </fieldset>
   <mat-divider></mat-divider>
   <!-- <button mat-button (click)="openDialog()">Abre PHNMSIPA</button> -->
   <a routerLink="/PHR01/PHNNSIPA" routerLinkActive="active">PHNNSIPA</a>
