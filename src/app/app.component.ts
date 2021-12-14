@@ -20,7 +20,7 @@ export class AppComponent implements OnInit{
     // https://www.itsolutionstuff.com/post/how-to-disable-browser-refresh-button-in-angularexample.html
 
     function disableF5(e: { which: any; key: any; preventDefault: () => void; }) { //key: any -> keycode: any
-    console.log(e);
+    // console.log(e);
       // if ((e.which || e.keyCode) == ( 112 || 113 || 114 || 115 || 116 )) e.preventDefault();
       if (pfs.includes(e.key)) e.preventDefault();
 

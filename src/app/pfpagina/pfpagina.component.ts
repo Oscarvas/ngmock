@@ -10,6 +10,12 @@ export class PfpaginaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    window.addEventListener('keypress', logKey);
+
+    function logKey(e: { which: any; key: any;}) {
+      console.log(e);
+    }
   }
+
 
 }
