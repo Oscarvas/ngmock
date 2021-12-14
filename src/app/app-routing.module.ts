@@ -5,10 +5,10 @@ import { PhnmaliaComponent } from './phnmalia/phnmalia.component';
 import { PhnmsipaComponent } from './phnmsipa/phnmsipa.component';
 
 const routes: Routes = [
-  { path: 'ph1', component: PhnmaliaComponent },
-  { path: 'ph2', component: Phnmali1Component },
-  { path: 'ph3', component: PhnmsipaComponent },
-  { path: '',   redirectTo: '/ph3', pathMatch: 'full' }
+  { path: 'PHR01', component: PhnmaliaComponent },
+  { path: 'PHR02', component: Phnmali1Component },
+  { path: 'TEST', component: PhnmsipaComponent },
+  { path: '',   redirectTo: '/PHR01', pathMatch: 'full' }
 
 ];
 
