@@ -2,13 +2,14 @@
 <app-cabecera ></app-cabecera>
 
 <!-- Creates a layout with a left and right sidenav and implicit content. -->
-
-
 <mat-drawer-container class="example-container" autosize hasBackdrop>
   <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
     <app-ayuda></app-ayuda>
   </mat-drawer>
-
+  <nav class="navega">
+    <a routerLink="/PHR01" routerLinkActive="active">PHR01</a><span>-</span>
+    <a routerLink="/PHR02" routerLinkActive="active">PHR02</a>
+  </nav>
   <div class="example-sidenav-content">
     <button type="button" mat-button (click)="drawer.toggle()">
       Activar ayuda
