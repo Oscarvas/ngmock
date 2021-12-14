@@ -6,15 +6,17 @@ import { PhnmsipaComponent } from './phnmsipa/phnmsipa.component';
 
 const routes: Routes = [
   { path: 'PHR01', component: PhnmaliaComponent,
-    children:[
-      {path: 'PHNNSIPA', component: PhnmsipaComponent}
-    ]
+    // children:[
+    //   {path: 'PHNNSIPA', component: PhnmsipaComponent}
+    // ]
   },
   { path: 'PHR02', component: Phnmali1Component ,
-    children:[
-      {path: 'PHNNSIPA', component: PhnmsipaComponent}
-    ]
+    // children:[
+    //   {path: 'PHNNSIPA', component: PhnmsipaComponent}
+    // ]
   },
+  {path: 'PHR01/PHNNSIPA', component: PhnmsipaComponent},
+  {path: 'PHR02/PHNNSIPA', component: PhnmsipaComponent},
   { path: 'TEST', component: PhnmsipaComponent },
   { path: '',   redirectTo: '/PHR01', pathMatch: 'full' }
 

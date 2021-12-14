@@ -1,6 +1,8 @@
 import {Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable, of } from 'rxjs';
 import { MAPA_PHNMSIPA } from '../material/pdas';
+import { Phnmsip1Component } from '../phnmsip1/phnmsip1.component';
 import { SimulaBackendService } from '../servicios/simula-backend.service';
 
 
@@ -26,12 +28,18 @@ export class PhnmsipaComponent implements OnInit {
   // misDatos: Observable<MAPA_PHNMSIPA[]> = of([]);
   listado: MAPA_PHNMSIPA[]=[];
 
-  constructor(private listaService: SimulaBackendService) {
+  constructor(private apiService: SimulaBackendService,
+              public dialog: MatDialog,) {
     // this.misDatos = listaService.list();
+  }
+  openDialog() {
+    this.dialog.open(Phnmsip1Component);
   }
 
   ngOnInit(): void {
-    this.listaService.list().subscribe(datos=>{
+    window.addEventListener("keydown", this.openRecibo);
+
+    this.apiService.list().subscribe(datos=>{
       // console.log(datos);
       this.listado = datos;
     },
@@ -39,6 +47,12 @@ export class PhnmsipaComponent implements OnInit {
     );
   }
    // string[] = ['id', 'name', 'progress', 'fruit'];
-
+   openRecibo(event: KeyboardEvent) {
+      switch (event.key) {
+        case 'Enter':
+            this.openDialog();
+            break;
+      }
+    }
 
 }

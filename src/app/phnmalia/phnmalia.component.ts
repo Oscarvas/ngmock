@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog} from '@angular/material/dialog';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MAPA_PHNMAILA,PBPACAB1 } from '../material/pdas';
 import { Phnmsip1Component } from '../phnmsip1/phnmsip1.component';
 
@@ -29,12 +30,30 @@ export class PhnmaliaComponent implements OnInit {
     TEXP: 'string',
   }
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   openDialog() {
     this.dialog.open(Phnmsip1Component);
   }
   ngOnInit(): void {
+    // window.addEventListener("keydown", this.miEvento);
   }
+  onKeyDownEvent(event: KeyboardEvent) {
+    if (event.key == 'F2')
+      this.router.navigate(['PHNNSIPA'], { relativeTo: this.route });
+  }
+  // https://www.htmlgoodies.com/javascript/implement-keyboard-navigation-on-custom-angular-controls/
+  miEvento(event: KeyboardEvent) {
+    switch (event.key) {
+      case 'F1':
+        console.log('hey');
+        break;
+      case 'Enter':
+          this.router.navigate(['PHNNSIPA'], { relativeTo: this.route });
+          break;
+    }
 
+  }
 }

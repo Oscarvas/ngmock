@@ -1,6 +1,6 @@
-// .hey{
-//   width: 800px;
-// }
+.hey{
+  width: 80%;
+}
 .fila {
   display: flex;
   align-items: center;
@@ -9,7 +9,7 @@
   justify-content: space-evenly;
 }
 table {
-  width: 100%;
+  width: 80%;
 }
 
 .mat-form-field {
@@ -17,3 +17,17 @@ table {
   width: 100%;
 }
 
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+  background-color: cadetblue;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}

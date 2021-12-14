@@ -1,83 +1,86 @@
-<h1 mat-dialog-title class="fila">-----------DATOS RECIBO-----------</h1>
+<!-- <h1 mat-dialog-title class="fila">-----------DATOS RECIBO-----------</h1> -->
+<fieldset>
+  <legend>DATOS RECIBO</legend>
+  <div mat-dialog-content>
+    <div class="fila" >
+      <p>Identificador del recibo</p>
+      <mat-form-field matTooltip="ANNO" style="width: 4ch;">
+        <mat-label>Año</mat-label>
+        <input readonly value={{detalle.ANNO}} matInput maxlength="4">
+      </mat-form-field>
+      <mat-form-field matTooltip="RECIBO">
+        <mat-label>Recibo</mat-label>
+        <input readonly value={{detalle.RECIBO}} matInput maxlength="13" width="13">
+      </mat-form-field>
+    </div>
 
-<div mat-dialog-content>
-  <div class="fila" >
-    <p>Identificador del recibo</p>
-    <mat-form-field matTooltip="ANNO" style="width: 4ch;">
-      <mat-label>ANNO</mat-label>
-      <input matInput maxlength="4">
-    </mat-form-field>
-    <mat-form-field matTooltip="RECIBO">
-      <mat-label>RECIBO</mat-label>
-      <input matInput maxlength="13" width="13">
-    </mat-form-field>
-  </div>
+    <div class="fila">
+      <p>Tipo de pago</p>
+      <mat-form-field matTooltip="TIPO_PAGO" style="width: 20ch;">
+        <mat-label>Tipo Pago</mat-label>
+        <input readonly value={{detalle.TIPO_PAGO}} matInput maxlength="20">
+      </mat-form-field>
+    </div>
 
-  <div class="fila">
-    <p>Tipo de pago</p>
-    <mat-form-field matTooltip="TIPO_PAGO" style="width: 20ch;">
-      <mat-label>TIPO_PAGO</mat-label>
-      <input matInput maxlength="20">
-    </mat-form-field>
-  </div>
+    <div class="fila">
+      <p>Fecha de Emision.......:</p>
+      <mat-form-field matTooltip="FECHA_EMISION" style="width: 8ch;">
+        <mat-label>Fecha Emision</mat-label>
+        <input readonly value={{detalle.FECHA_EMISION}} matInput maxlength="8">
+      </mat-form-field>
+    </div>
 
-  <div class="fila">
-    <p>Fecha de Emision.......:</p>
-    <mat-form-field matTooltip="FECHA_EMISION" style="width: 8ch;">
-      <mat-label>FECHA_EMISION</mat-label>
-      <input matInput maxlength="8">
-    </mat-form-field>
-  </div>
+    <div class="fila">
+      <p>Situacion Pago.......:</p>
+      <mat-form-field matTooltip="SITU" style="width: 1ch;">
+        <mat-label>Situacion</mat-label>
+        <input readonly value={{detalle.SITU}} matInput maxlength="1">
+      </mat-form-field>
+      <mat-form-field matTooltip="LIT_SITU" >
+        <mat-label>Literal</mat-label>
+        <input readonly value={{detalle.LIT_SITU}} matInput maxlength="20">
+      </mat-form-field>
+    </div>
 
-  <div class="fila">
-    <p>Situacion Pago.......:</p>
-    <mat-form-field matTooltip="SITU" style="width: 1ch;">
-      <mat-label>SITU</mat-label>
-      <input matInput maxlength="1">
-    </mat-form-field>
-    <mat-form-field matTooltip="LIT_SITU" >
-      <mat-label>LIT_SITU</mat-label>
-      <input matInput maxlength="20">
-    </mat-form-field>
-  </div>
+    <div class="fila">
+      <p>Fecha de Situacion</p>
+      <mat-form-field matTooltip="FECHA_SITU" style="width: 8ch;">
+        <mat-label>Fecha Situ</mat-label>
+        <input readonly value={{detalle.FECHA_SITU}} matInput maxlength="8">
+      </mat-form-field>
+    </div>
+    <div class="fila">
+      <p>Liquido.......</p>
+      <mat-form-field matTooltip="LIQUIDO_EURO" style="width: 10ch;">
+        <mat-label>Liquido €</mat-label>
+        <input readonly value={{detalle.LIQUIDO_EURO}} matInput maxlength="10">
+      </mat-form-field>
+    </div>
+    <div class="fila">
+      <p>Documento Contable</p>
+      <mat-form-field matTooltip="DOC_CONT_AÑO" style="width: 4ch;">
+        <mat-label>Doc Año</mat-label>
+        <input readonly value={{detalle.DOC_CONT_ANNO}} matInput maxlength="7">
+      </mat-form-field>
+      <p>/</p>
+      <mat-form-field matTooltip="DOC_CONT_NUM" style="width: 7ch;">
+        <mat-label>Doc Num</mat-label>
+        <input readonly value={{detalle.DOC_CONT_NUM}} matInput maxlength="7">
+      </mat-form-field>
+      <p>/</p>
+      <mat-form-field matTooltip="DOC_CONT_DC" style="width: 1ch;">
+        <mat-label>Digito Control</mat-label>
+        <input readonly value={{detalle.DOC_CONT_DC}} matInput maxlength="1">
+      </mat-form-field>
+    </div>
+    <br>
+    <div class="fila">
+      <p>Nueva Situacion</p>
+    </div>
 
-  <div class="fila">
-    <p>Fecha de Situacion</p>
-    <mat-form-field matTooltip="FECHA_SITU" style="width: 8ch;">
-      <mat-label>FECHA_SITU</mat-label>
-      <input matInput maxlength="8">
-    </mat-form-field>
   </div>
-  <div class="fila">
-    <p>Liquido.......</p>
-    <mat-form-field matTooltip="LIQUIDO_EURO" style="width: 10ch;">
-      <mat-label>LIQUIDO_EURO</mat-label>
-      <input matInput maxlength="10">
-    </mat-form-field>
-  </div>
-  <div class="fila">
-    <p>Documento Contable</p>
-    <mat-form-field matTooltip="DOC_CONT_AÑO" style="width: 4ch;">
-      <mat-label>DOC_CONT_AÑO</mat-label>
-      <input matInput maxlength="7">
-    </mat-form-field>
-    <p>/</p>
-    <mat-form-field matTooltip="DOC_CONT_NUM" style="width: 7ch;">
-      <mat-label>DOC_CONT_NUM</mat-label>
-      <input matInput maxlength="7">
-    </mat-form-field>
-    <p>/</p>
-    <mat-form-field matTooltip="DOC_CONT_DC" style="width: 1ch;">
-      <mat-label>DOC_CONT_DC</mat-label>
-      <input matInput maxlength="1">
-    </mat-form-field>
-  </div>
-  <br>
-  <div class="fila">
-    <p>Nueva Situacion</p>
-  </div>
+</fieldset>
 
-</div>
 <!-- <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Cerrar</button>
 </div> -->
