@@ -1,18 +1,21 @@
-<mat-toolbar class="superior">
-  <!-- <span>Cabecera</span> -->
-</mat-toolbar>
+<!-- *ngIf=false -->
+<app-cabecera ></app-cabecera>
 
 <!-- Creates a layout with a left and right sidenav and implicit content. -->
-<mat-sidenav-container>
-  <mat-sidenav mode="side">
-    <!-- <mat-sidenav opened mode="side"> -->
-    <app-my-side></app-my-side>
-  </mat-sidenav>
-  <mat-sidenav-content>
 
+
+<mat-drawer-container class="example-container" autosize hasBackdrop>
+  <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
+    <app-ayuda></app-ayuda>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      Activar ayuda
+    </button>
     <router-outlet></router-outlet>
     <app-pfpagina></app-pfpagina>
-    <!-- <app-phnmsipa></app-phnmsipa> -->
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  </div>
+
+</mat-drawer-container>
 

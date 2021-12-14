@@ -13,6 +13,7 @@ import { PfpaginaComponent } from './pfpagina/pfpagina.component';
 import { Phnmsip1Component } from './phnmsip1/phnmsip1.component';
 import { MySideComponent } from './my-side/my-side.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AyudaComponent } from './ayuda/ayuda.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     CabeceraComponent,
     PfpaginaComponent,
     Phnmsip1Component,
-    MySideComponent
+    MySideComponent,
+    AyudaComponent
   ],
   imports: [
     BrowserModule,
