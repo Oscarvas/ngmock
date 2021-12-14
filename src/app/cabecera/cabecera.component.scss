@@ -1,0 +1,8 @@
+.superior {
+  display: flex;
+  align-items: center;
+  gap: 10px 20px; /* row-gap column gap */
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  color: aliceblue;
+}

@@ -22,7 +22,7 @@ export interface PBPACAB1{
 }
 
 export interface MAPA_PHNMSIPA {
-  ANO: string;
+  ANNO: string;
   ENT_PAGO: number;
   ENTIDAD: string;
   FECHA_DESDE: number;
@@ -35,4 +35,29 @@ export interface MAPA_PHNMSIPA {
   SIT: string;
   SUC_PAGO: number;
   TIP_PAGO: string;
+}
+
+export interface MAPA_PHNMSIP1{
+  ANNO_CONTABLE?: string,
+  ANNO?: string,
+  DIA_CONTABLE?: string,
+  DOC_CONT_ANNO?: number,
+  DOC_CONT_DC?: string,
+  DOC_CONT_NUM?: string,
+  FECHA_EMISION?: number,
+  FECHA_SITU?: number,
+  LIQUIDO_EURO?: number,
+  LIT_NUEVA_SITU?: string,
+  LIT_SITU?: string,
+  MES_CONTABLE?: string,
+  NUEVA_SITU?: string,
+  RECIBO?: string,
+  SITU?: string,
+  TIPO_PAGO?: string
+
+}
+
+export interface Cabecera{
+  entidad: string,
+  usuario: string
 }

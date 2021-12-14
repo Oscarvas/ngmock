@@ -1,1 +1,5 @@
-<mat-card>cabecera works!</mat-card>
+<mat-toolbar class="superior">
+  <span>{{cabecera.entidad | uppercase}}</span>
+  <span>Usuario: {{cabecera.usuario}} </span>
+  <div>Fecha y Hora: {{ rxTime | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
+</mat-toolbar>
