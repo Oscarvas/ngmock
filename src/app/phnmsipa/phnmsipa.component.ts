@@ -1,7 +1,7 @@
 import {Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable, of } from 'rxjs';
-import { MAPA_PHNMSIPA } from '../material/pdas';
+import { MAPA_PHNMSIPA, PBPACAB1 } from '../material/pdas';
 import { Phnmsip1Component } from '../phnmsip1/phnmsip1.component';
 import { SimulaBackendService } from '../servicios/simula-backend.service';
 
@@ -27,6 +27,16 @@ export class PhnmsipaComponent implements OnInit {
 
   // misDatos: Observable<MAPA_PHNMSIPA[]> = of([]);
   listado: MAPA_PHNMSIPA[]=[];
+
+  cabecera: PBPACAB1={
+    LINEA_1:'INSS .... Usuario:agafsd',
+    LINEA_2:'GISS...... Alta de imapagados y anulados',
+    LINEA_3:'----------------------',
+    LINEA_4:'Titular .: 1 0202302552F 01 00       Expediente: 1 01 2023 0 00025525 01 00',
+    LINEA_5:'Nombre ..: Juan Juan Juan',
+    LINEA_8:'PF1 -- PF2 --- PF3 --- PF4 --- PF6 --- PF7 --- PF8 --- INTRO'
+
+  };
 
   constructor(private apiService: SimulaBackendService,
               public dialog: MatDialog,) {
