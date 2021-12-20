@@ -1,3 +1,11 @@
+export interface PF {
+  texto: string,
+  info?: string, // tooltip
+  funcion?: any, // opcional por ahora
+  bloqueado: boolean, // indica si se debe habilitar el chip
+  color?: string
+}
+
 export interface MAPA_PHNMAILA {
   DESIPF: string;
   DUPIF: string;

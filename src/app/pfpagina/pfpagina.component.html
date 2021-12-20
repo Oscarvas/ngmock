@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <mat-chip-list aria-label="Fish selection" >
     <mat-chip>PF1 ?</mat-chip>
     <mat-chip>PF2 mp</mat-chip>
@@ -11,4 +11,14 @@
     <mat-chip>PF9</mat-chip>
     <mat-chip color="accent" selected>ENTER</mat-chip>
   </mat-chip-list>
+</div> -->
+<!-- <footer class="footer mt-auto py-3 bg-light"> -->
+<div >
+  <mat-chip-list aria-label="Fish selection" >
+    <mat-chip *ngFor="let pf of funciones"
+    matTooltip={{pf.info}}
+    [disabled]="pf.bloqueado"
+    color="accent">{{pf.texto}}</mat-chip>
+  </mat-chip-list>
 </div>
+<!-- </footer> -->
