@@ -15,6 +15,7 @@ import { MySideComponent } from './my-side/my-side.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { CuerpoComponent } from './cuerpo/cuerpo.component';
+import { TablaComponent } from './tabla/tabla.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CuerpoComponent } from './cuerpo/cuerpo.component';
     Phnmsip1Component,
     MySideComponent,
     AyudaComponent,
-    CuerpoComponent
+    CuerpoComponent,
+    TablaComponent
   ],
   imports: [
     BrowserModule,
