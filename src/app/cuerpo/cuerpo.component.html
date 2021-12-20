@@ -1,7 +1,9 @@
 <mat-card>
-  <mat-card-title>{{mapa}}</mat-card-title>
-  <mat-card-content>{{contenido}}</mat-card-content>
+  <mat-card-title>{{nomrbeMapa}}</mat-card-title>
+  <mat-card-content>
+    <ng-content></ng-content>  <!-- Content Projection -->
+  </mat-card-content>
   <mat-card-footer>
-    <app-pfpagina [funciones]="pie"></app-pfpagina>
+    <app-pfpagina [funciones]="funcionesPF"></app-pfpagina>
   </mat-card-footer>
 </mat-card>
