@@ -3,90 +3,98 @@
   <p>{{cabecera.LINEA_2}}</p>
   <p>{{cabecera.LINEA_3}}</p>
   <mat-divider></mat-divider> -->
+  <mat-card-title>Titulo de la pantalla</mat-card-title>
+  <mat-card-content>
+    <fieldset>
+      <legend>Claves principales</legend>
 
-  <fieldset>
-    <legend>Claves principales</legend>
+      <div class="fila">
+        <p>Expediente......:</p>
+        <mat-form-field matTooltip="Este campo dispone de ayuda. Introduzca '?' en este campo para abrirla..." style="width: 1ch;" >
+          <mat-label>TEXTP</mat-label>
+          <input matInput maxlength="1" >
+        </mat-form-field>
+        <mat-form-field matTooltip="PEXP" style="width: 2ch;">
+          <mat-label>PEXP</mat-label>
+          <input matInput maxlength="2">
+        </mat-form-field>
+        <mat-form-field matTooltip="AEXP" style="width: 4ch;">
+          <mat-label>AEXP</mat-label>
+          <input matInput maxlength="4">
+        </mat-form-field>
+        <mat-form-field matTooltip="CEXP" style="width: 1ch;">
+          <mat-label>CEXP</mat-label>
+          <input matInput maxlength="1">
+        </mat-form-field>
+        <mat-form-field matTooltip="NEXP" style="width: 9ch;">
+          <mat-label>NEXP</mat-label>
+          <input matInput maxlength="9">
+        </mat-form-field>
+        <mat-form-field matTooltip="DUEXP" style="width: 2ch;">
+          <mat-label>DUEXP</mat-label>
+          <input matInput maxlength="2">
+        </mat-form-field>
+        <mat-form-field matTooltip="DEEXP" style="width: 2ch;">
+          <mat-label>DEEXP</mat-label>
+          <input matInput maxlength="2">
+        </mat-form-field>
 
-  <div class="fila">
-    <p>Expediente......:</p>
-    <mat-form-field matTooltip="Este campo dispone de ayuda. Introduzca '?' en este campo para abrirla..." style="width: 1ch;" >
-      <mat-label>TEXTP</mat-label>
-      <input matInput maxlength="1" >
-    </mat-form-field>
-    <mat-form-field matTooltip="PEXP" style="width: 2ch;">
-      <mat-label>PEXP</mat-label>
-      <input matInput maxlength="2">
-    </mat-form-field>
-    <mat-form-field matTooltip="AEXP" style="width: 4ch;">
-      <mat-label>AEXP</mat-label>
-      <input matInput maxlength="4">
-    </mat-form-field>
-    <mat-form-field matTooltip="CEXP" style="width: 1ch;">
-      <mat-label>CEXP</mat-label>
-      <input matInput maxlength="1">
-    </mat-form-field>
-    <mat-form-field matTooltip="NEXP" style="width: 9ch;">
-      <mat-label>NEXP</mat-label>
-      <input matInput maxlength="9">
-    </mat-form-field>
-    <mat-form-field matTooltip="DUEXP" style="width: 2ch;">
-      <mat-label>DUEXP</mat-label>
-      <input matInput maxlength="2">
-    </mat-form-field>
-    <mat-form-field matTooltip="DEEXP" style="width: 2ch;">
-      <mat-label>DEEXP</mat-label>
-      <input matInput maxlength="2">
-    </mat-form-field>
+      </div>
 
-  </div>
+      <div >
+        <form class="fila">
+          <p>Identificador de pago (recibo)......: Año</p>
+          <mat-form-field style="width: 4ch;" >
+            <mat-label>AÑO</mat-label>
+            <input matInput maxlength="4" >
+          </mat-form-field>
+          <mat-form-field matTooltip="Este campo dispone de ayuda. Introduzca '?' en este campo para abrirla..." style="width: 1ch;" >
+            <mat-label>ENT</mat-label>
+            <input matInput maxlength="1" (keypress)="abreAyuda()">
+          </mat-form-field>
+          <mat-form-field matTooltip="Este campo dispone de ayuda. Introduzca '?' en este campo para abrirla..." style="width: 2ch;" >
+            <mat-label>PRV</mat-label>
+            <input matInput maxlength="2" >
+          </mat-form-field>
+          <mat-form-field style="width: 10ch;" >
+            <mat-label>NUM_RECIBO</mat-label>
+            <input matInput maxlength="10" >
+          </mat-form-field>
+        </form>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Clave para pensionistas</legend>
 
-  <div >
-    <form class="fila">
-      <p>Identificador de pago (recibo)......: Año</p>
-      <mat-form-field style="width: 4ch;" >
-        <mat-label>AÑO</mat-label>
-        <input matInput maxlength="4" >
-      </mat-form-field>
-      <mat-form-field matTooltip="Este campo dispone de ayuda. Introduzca '?' en este campo para abrirla..." style="width: 1ch;" >
-        <mat-label>ENT</mat-label>
-        <input matInput maxlength="1" (keypress)="abreAyuda()">
-      </mat-form-field>
-      <mat-form-field matTooltip="Este campo dispone de ayuda. Introduzca '?' en este campo para abrirla..." style="width: 2ch;" >
-        <mat-label>PRV</mat-label>
-        <input matInput maxlength="2" >
-      </mat-form-field>
-      <mat-form-field style="width: 10ch;" >
-        <mat-label>NUM_RECIBO</mat-label>
-        <input matInput maxlength="10" >
-      </mat-form-field>
-    </form>
-  </div>
-  </fieldset>
-  <fieldset>
-    <legend>Clave para pensionistas</legend>
+      <div class="fila">
+        <p>Identificador Persona Fisica (IPF)</p>
+        <mat-form-field matTooltip="TIPOIPF" style="width: 1ch;">
+          <mat-label>TIPOIPF</mat-label>
+          <input matInput maxlength="1">
+        </mat-form-field>
+        <mat-form-field matTooltip="NUMIPF" style="width: 10ch;">
+          <mat-label>NUMIPF</mat-label>
+          <input matInput maxlength="10">
+        </mat-form-field>
+        <mat-form-field matTooltip="DUPIPF" style="width: 2ch;">
+          <mat-label>DUPIPF</mat-label>
+          <input matInput maxlength="2">
+        </mat-form-field>
+        <mat-form-field matTooltip="DESIPF" style="width: 2ch;" >
+          <mat-label>DESIPF</mat-label>
+          <input matInput maxlength="2">
+        </mat-form-field>
+      </div>
+    </fieldset>
+  </mat-card-content>
 
-  <div class="fila">
-    <p>Identificador Persona Fisica (IPF)</p>
-    <mat-form-field matTooltip="TIPOIPF" style="width: 1ch;">
-      <mat-label>TIPOIPF</mat-label>
-      <input matInput maxlength="1">
-    </mat-form-field>
-    <mat-form-field matTooltip="NUMIPF" style="width: 10ch;">
-      <mat-label>NUMIPF</mat-label>
-      <input matInput maxlength="10">
-    </mat-form-field>
-    <mat-form-field matTooltip="DUPIPF" style="width: 2ch;">
-      <mat-label>DUPIPF</mat-label>
-      <input matInput maxlength="2">
-    </mat-form-field>
-    <mat-form-field matTooltip="DESIPF" style="width: 2ch;" >
-      <mat-label>DESIPF</mat-label>
-      <input matInput maxlength="2">
-    </mat-form-field>
-  </div>
-  </fieldset>
-  <mat-divider></mat-divider>
+  <!-- <mat-divider></mat-divider> -->
   <!-- <button mat-button (click)="openDialog()">Abre PHNMSIPA</button> -->
-  <a routerLink="/PHR01/PHNNSIPA" routerLinkActive="active">PHNNSIPA</a>
+  <mat-card-footer>
+    <a routerLink="/PHR01/PHNNSIPA" routerLinkActive="active">PHNNSIPA</a>
+
+    <app-pfpagina [funciones]="funciones"></app-pfpagina>
+  </mat-card-footer>
 
 </mat-card>
+

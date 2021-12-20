@@ -1,7 +1,7 @@
 import {Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable, of } from 'rxjs';
-import { MAPA_PHNMSIPA, PBPACAB1 } from '../material/pdas';
+import { MAPA_PHNMSIPA, PBPACAB1} from '../material/pdas';
 import { Phnmsip1Component } from '../phnmsip1/phnmsip1.component';
 import { SimulaBackendService } from '../servicios/simula-backend.service';
 

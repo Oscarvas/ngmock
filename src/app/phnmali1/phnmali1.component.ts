@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MAPA_PHNMAILA, PBPACAB1 } from '../material/pdas';
-import { PhnmsipaComponent } from '../phnmsipa/phnmsipa.component';
+import { MAPA_PHNMAILA, PBPACAB1, PF } from '../material/pdas';
 import { PfpaginaComponent } from '../pfpagina/pfpagina.component';
 import { CabeceraComponent } from '../cabecera/cabecera.component';
 
@@ -11,6 +10,15 @@ import { CabeceraComponent } from '../cabecera/cabecera.component';
   styleUrls: ['./phnmali1.component.scss']
 })
 export class Phnmali1Component implements OnInit {
+
+  funciones: PF[]=[
+    {texto: 'F1', bloqueado: false , info: 'Pulse para mostrar la ayuda'},
+    {texto: 'F2', bloqueado: false },
+    {texto: 'F3', bloqueado: false, color: 'accent'},
+    {texto: 'F4', bloqueado: true },
+    {texto: 'F5', bloqueado: false },
+  ]
+
   cabecera: PBPACAB1 = {
     LINEA_1: 'I.N.S.S. USUARIO: OSCAR VASQUEZ SILSSSP PHNALI1 FECHA',
     LINEA_2: 'G.I.S.S.  Alta de impagados y anulados PHNALI1 HORA',
