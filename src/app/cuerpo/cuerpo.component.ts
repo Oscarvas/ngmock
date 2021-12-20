@@ -7,7 +7,7 @@ import { PF } from '../material/pdas';
   styleUrls: ['./cuerpo.component.scss']
 })
 export class CuerpoComponent implements OnInit {
-  @Input() nomrbeMapa = 'Nombre de la pantalla';
+  @Input() nombreMapa = 'Nombre de la pantalla';
   @Input() funcionesPF : PF[]= [];
 
   constructor() {
