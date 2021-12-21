@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { PF } from '../material/pdas';
@@ -10,6 +10,7 @@ import { PF } from '../material/pdas';
 })
 export class PfpaginaComponent implements OnInit {
   @Input() funciones: PF[] = [];
+  @Output() ayuda = new EventEmitter();
   // funciones: PF[]=[
   //   {texto: 'F1', bloqueado: false , info: 'Pulse para mostrar la ayuda'},
   //   {texto: 'F2', bloqueado: false },
@@ -20,7 +21,19 @@ export class PfpaginaComponent implements OnInit {
   hey = function () {
     console.log('clicado!');
   }
+  abrirAyuda(){
+    this.ayuda.emit();
+  }
 
+  selectorEvento(e: string = ''){
+    console.log(e);
+
+    if (e.includes('/'))
+      this.redirect(e)
+    else //if (e.includes('-'))
+      this.abrirAyuda()
+
+  }
   constructor(private _snackBar: MatSnackBar,
     private router: Router) {}
 

@@ -3,7 +3,7 @@
   matTooltip={{pf.info}}
   color={{pf.color}}
   [disabled]="pf.bloqueado"
-  (click)="redirect(pf.funcion)"
+  (click)="selectorEvento(pf.funcion)"
    >{{pf.texto}}</mat-chip>
   <mat-chip color="accent" selected
   (click)="openSnackBar('Voluptate elit Lorem dolor aute ipsum minim veniam velit irure tempor.', 'Cerrar')"
@@ -15,3 +15,4 @@
   <mat-chip color="primary" selected>Primary fish</mat-chip>
   <mat-chip color="accent" selected>Accent fish</mat-chip>
 </mat-chip-list> -->
+<!-- (click)="redirect(pf.funcion)" -->

@@ -11,3 +11,43 @@ mat-card-content{
   min-height: 400px;
   padding: 20px;
 }
+
+.example-sidenav{
+  background-image: linear-gradient(to bottom, rgba(255,0,0,0), #499c7c 70%);
+}
+
+.example-container{
+  background-image: linear-gradient(to bottom, rgba(255,0,0,0), #8acec8 99%);
+  height: 100%;
+}
+.superior{
+  color: white;
+}
+.navega a {
+  color: black;
+  text-decoration: none;
+  // display: inline;
+  font-size: 1.2rem;
+  background-color: #eee;
+  margin: .5rem .5rem .5rem 0;
+  // padding: .5rem 0;
+  // border-radius: 4px;
+}
+.navega a:hover {
+  color: #2c3a41;
+  background-color: #e6e6e6;
+}
+
+.navega a:active {
+  background-color: #525252;
+  color: #fafafa;
+}
+
+.navega .selected a {
+  background-color: #d6e6f7;
+}
+
+.navega .selected a:hover {
+  background-color: #bdd7f5;
+}
+

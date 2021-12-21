@@ -1,11 +1,27 @@
-<mat-card>
-  <mat-card-title>{{nombreMapa}}</mat-card-title>
-  <mat-card-content>
-    <mat-divider></mat-divider>
-    <ng-content></ng-content>  <!-- Content Projection -->
-  </mat-card-content>
-  <mat-card-footer>
-    <mat-divider></mat-divider>
-    <app-pfpagina [funciones]="funcionesPF"></app-pfpagina>
-  </mat-card-footer>
-</mat-card>
+<!-- Creates a layout with a left and right sidenav and implicit content. -->
+<mat-drawer-container class="example-container" autosize hasBackdrop>
+  <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
+    <app-ayuda [mapa]="helproutine" [aplicacion]="nombreMapa"></app-ayuda>
+  </mat-drawer>
+  <nav class="navega">
+    <a routerLink="/PHR01" routerLinkActive="active">PHR01</a> |
+    <a routerLink="/PHR02" routerLinkActive="active">PHR02</a>
+  </nav>
+  <div class="example-sidenav-content">
+    <!-- <button type="button" mat-button (click)="drawer.toggle()" >
+      Activar ayuda
+    </button> -->
+    <mat-card>
+      <mat-card-title>{{nombreMapa}}</mat-card-title>
+      <mat-card-content>
+        <mat-divider></mat-divider>
+        <ng-content></ng-content>  <!-- Content Projection -->
+      </mat-card-content>
+      <mat-card-footer>
+        <mat-divider></mat-divider>
+        <app-pfpagina [funciones]="funcionesPF" (ayuda)="drawer.toggle()"></app-pfpagina>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+
+</mat-drawer-container>
