@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { MAPA_PHNMSIP1, MAPA_PHNMSIPA } from '../material/pdas';
 import { Phnmsip1Component } from '../phnmsip1/phnmsip1.component';
 
 @Component({
@@ -25,10 +26,10 @@ export class TablaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  openDialog(fila: any) {
-    this.dialog.open(Phnmsip1Component);
-    console.log(fila);
-
+  openDialog(fila: MAPA_PHNMSIPA) {
+    // tupla: MAPA_PHNMSIP1;
+    // tupla.TIPO_PAGO = fila.TIP_PAGO;
+    this.dialog.open(Phnmsip1Component,{data: fila.RECIBO});
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

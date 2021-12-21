@@ -27,8 +27,11 @@ export class SimulaBackendService {
     return this.http.get(`${this.apiUrl}ayuda/${manual}`)
   }
 
-  getDetalle(): Observable<any>{
-    return this.http.get(`${this.apiUrl}recibo`)
+  // getDetalle(): Observable<any>{
+  //   return this.http.get(`${this.apiUrl}recibo`)
+  // }
+  getDetalle(id: string): Observable<any>{
+    return this.http.get(`${this.apiUrl}recibo/${id}`)
   }
 
 }
