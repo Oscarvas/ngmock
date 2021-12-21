@@ -1,6 +1,17 @@
-<mat-chip-list aria-label="Fish selection" >
+<mat-chip-list >
   <mat-chip *ngFor="let pf of funciones"
   matTooltip={{pf.info}}
+  color={{pf.color}}
   [disabled]="pf.bloqueado"
-  color="accent">{{pf.texto}}</mat-chip>
+  (click)="redirect(pf.funcion)"
+   >{{pf.texto}}</mat-chip>
+  <mat-chip color="accent" selected
+  (click)="openSnackBar('Voluptate elit Lorem dolor aute ipsum minim veniam velit irure tempor.', 'Cerrar')"
+  >Ejemplo error</mat-chip>
 </mat-chip-list>
+<!-- <mat-chip-list aria-label="Fish selection">
+  <mat-chip>One fish</mat-chip>
+  <mat-chip>Two fish</mat-chip>
+  <mat-chip color="primary" selected>Primary fish</mat-chip>
+  <mat-chip color="accent" selected>Accent fish</mat-chip>
+</mat-chip-list> -->

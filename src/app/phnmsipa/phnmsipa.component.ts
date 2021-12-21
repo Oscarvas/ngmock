@@ -1,7 +1,7 @@
 import {Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable, of } from 'rxjs';
-import { MAPA_PHNMSIPA, PBPACAB1} from '../material/pdas';
+import { MAPA_PHNMSIPA, PBPACAB1, PF} from '../material/pdas';
 import { Phnmsip1Component } from '../phnmsip1/phnmsip1.component';
 import { SimulaBackendService } from '../servicios/simula-backend.service';
 
@@ -37,6 +37,14 @@ export class PhnmsipaComponent implements OnInit {
     LINEA_8:'PF1 -- PF2 --- PF3 --- PF4 --- PF6 --- PF7 --- PF8 --- INTRO'
 
   };
+  funciones: PF[]=[
+    {texto: 'F1', bloqueado: false , info: 'Pulse para mostrar la ayuda'},
+    {texto: 'F2', bloqueado: false },
+    {texto: 'F3', bloqueado: false, color: 'accent'},
+    {texto: 'F6', bloqueado: true, color: 'primary' },
+    {texto: 'F7', bloqueado: false },
+    {texto: 'F8', bloqueado: false },
+  ]
 
   constructor(private apiService: SimulaBackendService,
               public dialog: MatDialog,) {

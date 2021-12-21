@@ -14,10 +14,17 @@ export class Phnmali1Component implements OnInit {
   funciones: PF[]=[
     {texto: 'F1', bloqueado: false , info: 'Pulse para mostrar la ayuda'},
     {texto: 'F2', bloqueado: false },
-    {texto: 'F3', bloqueado: false, color: 'accent'},
+    {texto: 'F3', bloqueado: false, color: 'accent',
+    funcion:  '/PHR01/PHNNSIPA', info: 'Este boton rediige al listado PHNNSIPA'
+      //  function() {
+      // console.log('clicado!');
+      // this.router.navigate(['/PHR01/PHNNSIPA']);
+    // },//'<a routerLink="/PHR01/PHNNSIPA" routerLinkActive="active">PHNNSIPA</a>'
+  },
     {texto: 'F4', bloqueado: true },
     {texto: 'F5', bloqueado: false },
   ]
+  // <a routerLink="/PHR01/PHNNSIPA" routerLinkActive="active">PHNNSIPA</a>
 
   cabecera: PBPACAB1 = {
     LINEA_1: 'I.N.S.S. USUARIO: OSCAR VASQUEZ SILSSSP PHNALI1 FECHA',

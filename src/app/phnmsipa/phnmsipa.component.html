@@ -1,31 +1,29 @@
-<mat-card class="hey">
-<p>{{cabecera.LINEA_1}}</p>
-<p>{{cabecera.LINEA_2}}</p>
-<p>{{cabecera.LINEA_3}}</p>
-<p>{{cabecera.LINEA_4}}</p>
-<p>{{cabecera.LINEA_5}}</p>
-<mat-divider></mat-divider>
-<br>
-<form class="fila">
-  <p>Pag:</p>
-  <mat-form-field  style="width: 1ch;" >
-    <mat-label>PAGINA</mat-label>
-    <input matInput maxlength="1" >
-  </mat-form-field>
-  <p>/</p>
-  <mat-form-field  style="width: 1ch;" >
-    <mat-label>PAGINA_TOT</mat-label>
-    <input matInput maxlength="1" >
-  </mat-form-field>
-</form>
-<p>--- Periodo de Pago --</p>
-<div>
+<app-cuerpo nombreMapa="PHNMSIPA" [funcionesPF]="funciones">
+  <!-- <p>{{cabecera.LINEA_1}}</p>
+  <p>{{cabecera.LINEA_2}}</p>
+  <p>{{cabecera.LINEA_3}}</p>
+  <p>{{cabecera.LINEA_4}}</p>
+  <p>{{cabecera.LINEA_5}}</p> -->
 
-  <app-tabla
-  [displayedColumns]="displayedColumns"
-  [tableData]="listado"></app-tabla>
+  <form class="fila">
+    <p>Pag:</p>
+    <mat-form-field  style="width: 1ch;" >
+      <mat-label>PAGINA</mat-label>
+      <input matInput maxlength="1" >
+    </mat-form-field>
+    <p>/</p>
+    <mat-form-field  style="width: 1ch;" >
+      <mat-label>PAGINA_TOT</mat-label>
+      <input matInput maxlength="1" >
+    </mat-form-field>
+  </form>
+  <p>--- Periodo de Pago --</p>
+  <div>
 
-</div>
-<p>{{cabecera.LINEA_8}}</p>
-<!-- <button mat-button (click)="openDialog()">Abrir Detalle</button> -->
-</mat-card>
+    <app-tabla
+    [displayedColumns]="displayedColumns"
+    [tableData]="listado"></app-tabla>
+
+  </div>
+  <!-- <p>{{cabecera.LINEA_8}}</p> -->
+</app-cuerpo>

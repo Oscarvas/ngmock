@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { PF } from '../material/pdas';
 
 @Component({
@@ -15,8 +17,24 @@ export class PfpaginaComponent implements OnInit {
   //   {texto: 'F4', bloqueado: true },
   //   {texto: 'F5', bloqueado: false },
   // ]
+  hey = function () {
+    console.log('clicado!');
+  }
 
-  constructor() { }
+  constructor(private _snackBar: MatSnackBar,
+    private router: Router) {}
+
+  redirect(ruta: string = ''){
+    if (ruta)
+      this.router.navigate([ruta]);
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action,{
+      // horizontalPosition: 'center',
+      // verticalPosition: 'top'
+    });
+  }
 
   ngOnInit(): void {
     // window.addEventListener('keypress', logKey);
