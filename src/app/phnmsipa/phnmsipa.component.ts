@@ -38,7 +38,7 @@ export class PhnmsipaComponent implements OnInit {
 
   };
   funciones: PF[]=[
-    {texto: 'F1', bloqueado: false , info: 'Pulse para mostrar la ayuda'},
+    {texto: 'F1', bloqueado: false , info: 'Pulse para mostrar la ayuda',  accion:  () => { return 'PHR01-2' }},
     {texto: 'F2', bloqueado: false },
     {texto: 'F3', bloqueado: false, color: 'accent'},
     {texto: 'F6', bloqueado: true, color: 'primary' },

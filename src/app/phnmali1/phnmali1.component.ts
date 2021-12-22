@@ -12,10 +12,11 @@ import { CabeceraComponent } from '../cabecera/cabecera.component';
 export class Phnmali1Component implements OnInit {
 
   funciones: PF[]=[
-    {texto: 'F1', bloqueado: false , info: 'Pulse para mostrar la ayuda'},
+    {texto: 'F1', bloqueado: false , info: 'Pulse para mostrar la ayuda',  accion:  () => { return 'PHR01-1' }},
     {texto: 'F2', bloqueado: false },
     {texto: 'F3', bloqueado: false, color: 'accent',
-    funcion:  '/PHR01/PHNNSIPA', info: 'Este boton rediige al listado PHNNSIPA'
+    accion:  () => { return '/PHR01/PHNNSIPA' }//console.log('/PHR01/PHNNSIPA') }
+    , info: 'Este boton rediige al listado PHNNSIPA'
       //  function() {
       // console.log('clicado!');
       // this.router.navigate(['/PHR01/PHNNSIPA']);
@@ -44,6 +45,7 @@ export class Phnmali1Component implements OnInit {
     PEXP: 'string',
     TEXP: 'string',
   }
+
 
 
   constructor(public dialog: MatDialog) { }

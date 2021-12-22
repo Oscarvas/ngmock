@@ -2,7 +2,7 @@ export interface PF {
   // [x: string]: any;
   texto: string,
   info?: string, // tooltip
-  funcion?: string, // opcional por ahora
+  accion?: any, // opcional por ahora
   bloqueado: boolean, // indica si se debe habilitar el chip
   color?: string
 }
